@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>了解前端缓存 | 千语前端</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/vblog/favicon.ico">
+    <meta name="description" content="菊厂程序员，写点自己喜欢的">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/vblog/assets/css/0.styles.4764ad73.css" as="style"><link rel="preload" href="/vblog/assets/js/app.23853e59.js" as="script"><link rel="preload" href="/vblog/assets/js/3.ad118493.js" as="script"><link rel="preload" href="/vblog/assets/js/1.5a9133c8.js" as="script"><link rel="preload" href="/vblog/assets/js/32.71a465a1.js" as="script"><link rel="prefetch" href="/vblog/assets/js/10.af0d700a.js"><link rel="prefetch" href="/vblog/assets/js/11.0c5760f6.js"><link rel="prefetch" href="/vblog/assets/js/12.d118e69e.js"><link rel="prefetch" href="/vblog/assets/js/13.e1829567.js"><link rel="prefetch" href="/vblog/assets/js/14.09b81d79.js"><link rel="prefetch" href="/vblog/assets/js/15.ac66c375.js"><link rel="prefetch" href="/vblog/assets/js/16.ad481a4d.js"><link rel="prefetch" href="/vblog/assets/js/17.7edf2097.js"><link rel="prefetch" href="/vblog/assets/js/18.4d38b733.js"><link rel="prefetch" href="/vblog/assets/js/19.1b151e1e.js"><link rel="prefetch" href="/vblog/assets/js/20.ac013abd.js"><link rel="prefetch" href="/vblog/assets/js/21.72d0c75f.js"><link rel="prefetch" href="/vblog/assets/js/22.797bf67d.js"><link rel="prefetch" href="/vblog/assets/js/23.4af9b9da.js"><link rel="prefetch" href="/vblog/assets/js/24.7c7a10b6.js"><link rel="prefetch" href="/vblog/assets/js/25.2d26ff50.js"><link rel="prefetch" href="/vblog/assets/js/26.d258983a.js"><link rel="prefetch" href="/vblog/assets/js/27.ccc21a44.js"><link rel="prefetch" href="/vblog/assets/js/28.40adc506.js"><link rel="prefetch" href="/vblog/assets/js/29.a7569426.js"><link rel="prefetch" href="/vblog/assets/js/30.7db532ea.js"><link rel="prefetch" href="/vblog/assets/js/31.27c09d74.js"><link rel="prefetch" href="/vblog/assets/js/33.58e5cef6.js"><link rel="prefetch" href="/vblog/assets/js/34.f26b73bb.js"><link rel="prefetch" href="/vblog/assets/js/35.bdf786b5.js"><link rel="prefetch" href="/vblog/assets/js/36.b2e465b4.js"><link rel="prefetch" href="/vblog/assets/js/37.b2580a83.js"><link rel="prefetch" href="/vblog/assets/js/38.318343b8.js"><link rel="prefetch" href="/vblog/assets/js/4.acbdb66a.js"><link rel="prefetch" href="/vblog/assets/js/5.fc67ef2b.js"><link rel="prefetch" href="/vblog/assets/js/6.4d9ddc1f.js"><link rel="prefetch" href="/vblog/assets/js/7.70c1e8a4.js"><link rel="prefetch" href="/vblog/assets/js/8.0fcec9fa.js"><link rel="prefetch" href="/vblog/assets/js/9.5fd2105a.js">
+    <link rel="stylesheet" href="/vblog/assets/css/0.styles.4764ad73.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container" data-v-1156296a><div data-v-1156296a><div id="loader-wrapper" class="loading-wrapper" data-v-d48f4d20 data-v-1156296a data-v-1156296a><div class="loader-main" data-v-d48f4d20><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-4e82dffc data-v-1156296a data-v-1156296a><h3 class="title" data-v-4e82dffc data-v-4e82dffc>千语前端</h3> <p class="description" data-v-4e82dffc data-v-4e82dffc>菊厂程序员，写点自己喜欢的</p> <label id="box" class="inputBox" data-v-4e82dffc data-v-4e82dffc><input type="password" value="" data-v-4e82dffc> <span data-v-4e82dffc>Konck! Knock!</span> <button data-v-4e82dffc>OK</button></label> <div class="footer" data-v-4e82dffc data-v-4e82dffc><span data-v-4e82dffc><i class="iconfont reco-theme" data-v-4e82dffc></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-4e82dffc>vuePress-theme-reco</a></span> <span data-v-4e82dffc><i class="iconfont reco-copyright" data-v-4e82dffc></i> <a data-v-4e82dffc><span data-v-4e82dffc>will.wei</span>
+            
+          <span data-v-4e82dffc>2017 - </span>
+          2022
+        </a></span></div></div> <div class="hide" data-v-1156296a><header class="navbar" data-v-1156296a><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/vblog/" class="home-link router-link-active"><img src="/vblog/logo.png" alt="千语前端" class="logo"> <span class="site-name">千语前端</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/vblog/" class="nav-link"><i class="undefined"></i>
+  主页
+</a></div><div class="nav-item"><a href="/vblog/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/vblog/categories/VuePress/" class="nav-link"><i class="undefined"></i>
+  VuePress
+</a></li><li class="dropdown-item"><!----> <a href="/vblog/categories/源码学习/" class="nav-link"><i class="undefined"></i>
+  源码学习
+</a></li><li class="dropdown-item"><!----> <a href="/vblog/categories/JavaScript/" class="nav-link"><i class="undefined"></i>
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/vblog/categories/网络/" class="nav-link"><i class="undefined"></i>
+  网络
+</a></li><li class="dropdown-item"><!----> <a href="/vblog/categories/手写代码系列/" class="nav-link"><i class="undefined"></i>
+  手写代码系列
+</a></li><li class="dropdown-item"><!----> <a href="/vblog/categories/Css/" class="nav-link"><i class="undefined"></i>
+  Css
+</a></li><li class="dropdown-item"><!----> <a href="/vblog/categories/Vue/" class="nav-link"><i class="undefined"></i>
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/vblog/categories/前端工程化/" class="nav-link"><i class="undefined"></i>
+  前端工程化
+</a></li><li class="dropdown-item"><!----> <a href="/vblog/categories/浏览器/" class="nav-link"><i class="undefined"></i>
+  浏览器
+</a></li><li class="dropdown-item"><!----> <a href="/vblog/categories/性能优化/" class="nav-link"><i class="undefined"></i>
+  性能优化
+</a></li><li class="dropdown-item"><!----> <a href="/vblog/categories/跨越/" class="nav-link"><i class="undefined"></i>
+  跨越
+</a></li></ul></div></div><div class="nav-item"><a href="/vblog/articles/" class="nav-link router-link-active"><i class="undefined"></i>
+  文章
+</a></div><div class="nav-item"><a href="https://github.com/CClarence007" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-1156296a></div> <aside class="sidebar" data-v-1156296a><div class="personal-info-wrapper" data-v-828910c6 data-v-1156296a><img src="/vblog/avatar.png" alt="author-avatar" class="personal-img" data-v-828910c6> <h3 class="name" data-v-828910c6>
+    will.wei
+  </h3> <div class="num" data-v-828910c6><div data-v-828910c6><h3 data-v-828910c6>28</h3> <h6 data-v-828910c6>Articles</h6></div> <div data-v-828910c6><h3 data-v-828910c6>20</h3> <h6 data-v-828910c6>Tags</h6></div></div> <ul class="social-links" data-v-828910c6></ul> <hr data-v-828910c6></div> <nav class="nav-links"><div class="nav-item"><a href="/vblog/" class="nav-link"><i class="undefined"></i>
+  主页
+</a></div><div class="nav-item"><a href="/vblog/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/vblog/categories/VuePress/" class="nav-link"><i class="undefined"></i>
+  VuePress
+</a></li><li class="dropdown-item"><!----> <a href="/vblog/categories/源码学习/" class="nav-link"><i class="undefined"></i>
+  源码学习
+</a></li><li class="dropdown-item"><!----> <a href="/vblog/categories/JavaScript/" class="nav-link"><i class="undefined"></i>
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/vblog/categories/网络/" class="nav-link"><i class="undefined"></i>
+  网络
+</a></li><li class="dropdown-item"><!----> <a href="/vblog/categories/手写代码系列/" class="nav-link"><i class="undefined"></i>
+  手写代码系列
+</a></li><li class="dropdown-item"><!----> <a href="/vblog/categories/Css/" class="nav-link"><i class="undefined"></i>
+  Css
+</a></li><li class="dropdown-item"><!----> <a href="/vblog/categories/Vue/" class="nav-link"><i class="undefined"></i>
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/vblog/categories/前端工程化/" class="nav-link"><i class="undefined"></i>
+  前端工程化
+</a></li><li class="dropdown-item"><!----> <a href="/vblog/categories/浏览器/" class="nav-link"><i class="undefined"></i>
+  浏览器
+</a></li><li class="dropdown-item"><!----> <a href="/vblog/categories/性能优化/" class="nav-link"><i class="undefined"></i>
+  性能优化
+</a></li><li class="dropdown-item"><!----> <a href="/vblog/categories/跨越/" class="nav-link"><i class="undefined"></i>
+  跨越
+</a></li></ul></div></div><div class="nav-item"><a href="/vblog/articles/" class="nav-link router-link-active"><i class="undefined"></i>
+  文章
+</a></div><div class="nav-item"><a href="https://github.com/CClarence007" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav> <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span></span> <span class="arrow down"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span></span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span></span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span></span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span></span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span></span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span></span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span></span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span></span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span></span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span></span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span></span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span></span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span></span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span></span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span></span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span></span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span></span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span></span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span></span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span></span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span></span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-4e82dffc data-v-1156296a><h3 class="title" data-v-4e82dffc data-v-4e82dffc>了解前端缓存</h3> <!----> <label id="box" class="inputBox" data-v-4e82dffc data-v-4e82dffc><input type="password" value="" data-v-4e82dffc> <span data-v-4e82dffc>Konck! Knock!</span> <button data-v-4e82dffc>OK</button></label> <div class="footer" data-v-4e82dffc data-v-4e82dffc><span data-v-4e82dffc><i class="iconfont reco-theme" data-v-4e82dffc></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-4e82dffc>vuePress-theme-reco</a></span> <span data-v-4e82dffc><i class="iconfont reco-copyright" data-v-4e82dffc></i> <a data-v-4e82dffc><span data-v-4e82dffc>will.wei</span>
+            
+          <span data-v-4e82dffc>2017 - </span>
+          2022
+        </a></span></div></div> <div data-v-1156296a><main class="page" style="padding-right:0;"><section><div class="page-title"><h1 class="title">了解前端缓存</h1> <div data-v-1ff7123e><i class="iconfont reco-account" data-v-1ff7123e><span data-v-1ff7123e>will.wei</span></i> <i class="iconfont reco-date" data-v-1ff7123e><span data-v-1ff7123e>2/28/2022</span></i> <!----> <i class="tags iconfont reco-tag" data-v-1ff7123e><span class="tag-item" data-v-1ff7123e>网络</span></i></div></div> <div class="theme-reco-content content__default"><h2 id="了解前端缓存"><a href="#了解前端缓存" class="header-anchor">#</a> 了解前端缓存</h2> <div class="custom-block tip"><p class="title"></p><p>前端缓存分为HTTP缓存和浏览器缓存。HTTP缓存是在HTTP请求传输时用到的缓存，在服务器上设置；浏览器缓存则主要由前端开发在前端设置；</p></div><ol><li><h3 id="http缓存"><a href="#http缓存" class="header-anchor">#</a> HTTP缓存</h3></li></ol> <p>浏览器每次发起请求，都会先在浏览器缓存中查找该请求的结果及缓存标识</p> <h4 id="_1-1-强制缓存"><a href="#_1-1-强制缓存" class="header-anchor">#</a> 1.1 强制缓存</h4> <p>强缓存就是向浏览器缓存查找该请求结果，并根据该结果的缓存规则来决定是否使用该缓存结果的过程。</p> <ul><li>1.不存在该缓存结果和标识，强制缓存失效，直接向服务器发送请求。</li> <li>2.存在该缓存结果和缓存标识，但结果已失效，则使用协商缓存；</li> <li>3.存在该缓存结果和缓存标识，且结果未失效，强制缓存生效，直接返回该结果；</li></ul> <p>浏览器在向服务器发送请求时，服务器会将缓存规则放入HTTP响应报文的头中和响应结果一起返回给浏览器，控制强制缓存的字段分别是Expires和Cache-Control,其中Cache-Control优先级比Expires高；</p> <ul><li>Expires
+过期时间</li> <li>Cache-Control
+max-age=XXX 缓存多少秒后失效，这个优先级高于Expires</li></ul> <h4 id="_1-2-协商缓存"><a href="#_1-2-协商缓存" class="header-anchor">#</a> 1.2 协商缓存</h4> <p>协商缓存就是强制缓存第二种情况，结果已失效的时候，浏览器会携带缓存标识向服务器发起请求，由服务器根据缓存标识决定是否使用缓存的过程。</p> <ul><li>1.协商缓存生效。返回304，直接使用浏览器缓存；</li> <li>2.协商缓存失效，返回200和请求结果；
+同强制缓存一样，协商缓存的标识也是在响应报文的HTTP头中和请求结果一起返回给浏览器的，控制协商缓存的字段分别是
+Last-Modified/If-Modified-Since 和 Etag/If-None-Match.其中Etag/If-None-Match优先级更高；</li> <li>Last-Modified(服务器返回时)/If-Modified-Since(浏览器请求时)
+Last-Modified是服务器响应请求时，返回该资源文件在服务器最后被修改的时间；
+If-Modified-Since 是客户端再次发起请求时所携带的Last-Modified的值，通过此字段来告诉服务器该资源上次请求的最后修改时间；
+如果服务器最后修改资源时间大于此值，则缓存失效，重新返回资源，状态码200；否则返回304，代表资源无更新；</li> <li>Etag(服务器返回时)/If-None-Match(服务器返回时)
+Etag是服务器响应请求时，返回当前资源文件的唯一标识，由服务器生成；
+if-None-Match是由客户端再次发起该请求时所携带的Etag的值，通过此字段来告诉服务器该资源上次请求时的唯一标识。服务器收到该值后会与所在服务器的Etag值做对比，如果不一致，则重新返回资源，状态码200；否则返回304，代表资源无更新；</li></ul> <ol start="2"><li><h3 id="浏览器缓存"><a href="#浏览器缓存" class="header-anchor">#</a> 浏览器缓存</h3></li></ol> <h4 id="_2-1-cookie"><a href="#_2-1-cookie" class="header-anchor">#</a> 2.1 Cookie</h4> <ul><li><p>name和value
+name是cookie的名称，cookie一旦创建，名称就不可更改；value是对应的cookie的值</p></li> <li><p>Domain
+domain决定cookie在哪个域是有效的</p></li> <li><p>Path
+cookie的有效路径</p></li> <li><p>Expires/Max-age
+均为cookie的有效期。Expires是cookie被删除时的时间戳，若设置为以前的时间，则立即被删除；不设置默认页面关闭时删除；
+Max-age也是cookie的有效期，但它的单位是秒，是多长时间后失效，若Max-Age的时间为0，立即失效，设置为负数则页面关闭时失效；</p></li> <li><p>Size
+cookie的大小</p></li> <li><p>httpOnly
+设为true时，不允许根据document.cookie去更改这个值；</p></li> <li><p>secure
+设为true时，浏览器不会在HTTP传输此cookie，只会在HTTPS和SSL等安全协议中使用；</p></li> <li><p>SameSite
+限制来自第三方的cookie，从而减少安全风险；</p></li> <li><p>Priority
+优先级，当cookie的数量超出时，低优先级的cookie会被优先删除；</p></li></ul> <h4 id="_2-2-localstorage"><a href="#_2-2-localstorage" class="header-anchor">#</a> 2.2 localStorage</h4> <ul><li>在同源的所有标签页和窗口之间共享数据</li> <li>数据不会过期。它在浏览器重启甚至系统重启后仍然存在；</li></ul> <h4 id="_2-3-sessionstorage"><a href="#_2-3-sessionstorage" class="header-anchor">#</a> 2.3 sessionStorage</h4> <ul><li>sessionStorage仅存在于当前浏览器标签页；</li> <li>具有相同页面的另一个标签页将会有不同的存储；</li> <li>数据在页面刷新后仍然保留，但是在关闭、重新打开浏览器标签页之后不会保留；</li></ul></div></section> <footer class="page-edit"><!----> <!----></footer> <!----> <div class="comments-wrapper"><!----></div> <ul class="side-bar sub-sidebar-wrapper" style="width:0;" data-v-70334359></ul></main> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div><!----><!----></div></div>
+    <script src="/vblog/assets/js/app.23853e59.js" defer></script><script src="/vblog/assets/js/3.ad118493.js" defer></script><script src="/vblog/assets/js/1.5a9133c8.js" defer></script><script src="/vblog/assets/js/32.71a465a1.js" defer></script>
+  </body>
+</html>
